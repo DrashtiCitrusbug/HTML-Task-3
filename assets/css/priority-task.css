@@ -1,0 +1,221 @@
+.prioritized-tasks-section-wrapper .btn-wrapper {
+  gap: 0.3rem;
+  color: rgba(48, 48, 211, 1);
+  padding: 0.25rem 0.4rem;
+  background-color: rgba(235, 235, 254, 1);
+  border-radius: 0.4rem;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+.prioritized-tasks-section-wrapper .btn-wrapper .plus-icon {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+.prioritized-tasks-section-wrapper .btn-wrapper .btn-text {
+  font-weight: 600;
+  font-size: 0.6rem;
+  line-height: 0.9rem;
+}
+.prioritized-tasks-body-wrapper {
+  padding-bottom: 0.4rem;
+}
+.prioritized-tasks-body-wrapper.hide-p-t-div{
+  display:none;
+}
+.prioritized-tasks-body-wrapper tr {
+  border-bottom: 1px solid rgba(36, 35, 35, 0.089);
+}
+.prioritized-tasks-header-details-wrapper {
+  margin-left: auto;
+  gap: 0.4rem;
+}
+.show-completed-wrapper {
+  gap: 0.3rem;
+}
+.show-completed-wrapper input {
+  appearance: none;
+  outline: 1px solid rgba(235, 235, 245, 1);
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 0.2rem;
+  position:relative;
+}
+.show-completed-wrapper .sc-text {
+  font-size: 0.6rem;
+  line-height: 0.9rem;
+  font-weight: 600;
+  color: rgba(88, 88, 116, 1);
+}
+.prioritized-tasks-section-wrapper {
+  padding: 0.8rem 1.2rem 1.2rem 1.2rem;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 0.6rem;
+}
+.prioritized-tasks-header-wrapper {
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(36, 35, 35, 0.089);
+  flex-wrap:wrap;
+}
+.prioritized-tasks-header-wrapper .prioritized-tasks-header-wrapper-icon {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-right: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prioritized-tasks-header-wrapper .prioritized-tasks-header-wrapper-icon img {
+  width: 100%;
+  height: 100%;
+}
+.prioritized-tasks-header-name {
+  font-weight: 600;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  color: rgba(26, 26, 51, 1);
+}
+
+.priority-selection-wrapper {
+  position: relative;
+  display: flex;
+  height: auto;
+  align-items: center;
+  width: max-content;
+  justify-content: center;
+  margin: 0.8rem;
+}
+
+.priority-selection-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 0.6rem;
+  font-weight: 600;
+  line-height: 0.9rem;
+  border: 0;
+  border-radius: 0.3rem;
+  padding: 0.15rem 0.2rem 0.15rem 0.4rem;
+  background-color: rgba(250, 235, 238, 1);
+  padding-right: 1.25rem; /* space for arrow */
+  background-image: none;
+  color: rgba(178, 0, 36, 1);
+  width: auto;
+  min-width: max-content;
+}
+
+/* Custom arrow */
+.priority-selection-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 25%;
+  right: 0.25rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  background: url("../images/arrow_down.png") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+}
+.time-remaining-wrapper {
+  gap: 0.1rem;
+  padding: 0 0.4rem;
+  background: rgba(247, 247, 252, 1);
+  width: fit-content;
+  border-radius: 0.3rem;
+  margin: 0.8rem;
+}
+.time-remaining-wrapper img {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+.time-remaining-wrapper .tm-text {
+  font-weight: 600;
+  font-size: 0.6rem;
+  line-height: 0.9rem;
+  letter-spacing: 0%;
+  padding: 0.15rem 0;
+}
+.priortized-task-tr .task-title-wrapper input {
+  width: 1.2em;
+  height: 1.2em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid rgba(235, 235, 245, 1);
+  -webkit-appearance: none;
+  outline: none;
+  position: relative;
+}
+input[type="checkbox"]:checked {
+  background-color: rgba(47, 194, 44, 1);
+  border-color: rgba(47, 194, 44, 1);
+}
+
+ input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/checkox_right.png"); /* Your checkmark image */
+  background-size: 0.8rem 0.8rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.priortized-task-tr .task-title-wrapper .checkbox-wrapper {
+  margin: 0.8rem 0 0.8rem 0.8rem;
+}
+.priortized-task-tr .task-title-wrapper .title-name a {
+  color: black;
+}
+.priortized-task-tr .task-title-wrapper .title-name {
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 1.1rem;
+  letter-spacing: 0%;
+  color: rgb(8, 8, 9);
+  border: 1px solid rgba(235, 235, 245, 1);
+  border-radius: 0.4rem;
+  padding: 0.25rem 0.5rem;
+  height: fit-content;
+  width: 100%;
+  margin: 0.6rem;
+}
+.priortized-task-tr .task-title-wrapper .title-name a:hover {
+  color: rgba(48, 48, 211, 1);
+  text-decoration: underline;
+}
+.priortized-task-tr .due-date-wrapper {
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 1.1rem;
+  letter-spacing: 0%;
+  color: rgba(88, 88, 116, 1);
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(235, 235, 245, 1);
+  margin: 0.6rem;
+  border-radius: 0.4rem;
+}
+.prioritized-tasks-table thead th:nth-child(1) {
+  width: 42%;
+  min-width:150px;
+}
+
+.prioritized-tasks-table thead th:nth-child(2) {
+  width: 23%;
+}
+
+.prioritized-tasks-table thead th:nth-child(3) {
+  width: 20%;
+}
+
+.prioritized-tasks-table thead th:nth-child(4) {
+  width: 15%;
+}
+@media screen and (max-width: 450px) {
+  .prioritized-tasks-header-details-wrapper{
+    width:100%;
+    justify-content:space-between;
+  }
+}
