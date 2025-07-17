@@ -214,6 +214,9 @@ input[type="checkbox"]:checked {
   width: 15%;
 }
 @media screen and (max-width: 450px) {
+  .prioritized-tasks-header-wrapper{
+    justify-content: flex-start!important;
+  }
   .prioritized-tasks-header-details-wrapper{
     width:100%;
     justify-content:space-between;

@@ -873,6 +873,148 @@
                           </div>
                         </td>
                       </tr>
+                      <tr class="hidden-kpi-tr">
+                        <td class="visible-border-td">
+                          <div>
+                            <div class="horizontal-line"></div>
+                            <div class="vertial-line"></div>
+                            <div
+                              class="kpi-detail-collapase-td-wrapper d-flex flex-row"
+                            >
+                              <div class="kpi-title">
+                                <a href="#">Cost per Lead</a>
+                              </div>
+                              <img
+                                src="assets/images/three_dots.png"
+                                class="three-dot"
+                              />
+                            </div>
+                          </div>
+                        </td>
+                        <td class="visible-border-td">
+                          <div>
+                            <div class="kpi-re-wrapper d-flex flex-row">
+                              <img src="assets/images/user_logo.png" />
+                              <div class="kpi-user-name">P.G.</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="visible-border-td">
+                          <div>
+                            <div class="graph-icon-wrapper">
+                              <img src="assets/images/graph.png" />
+                            </div>
+                          </div>
+                        </td>
+                        <td class="visible-border-td">
+                          <div>
+                            <div
+                              class="kpi-unit-wrapper d-flex justify-content-center"
+                            >
+                              €/#
+                            </div>
+                          </div>
+                        </td>
+                        <td class="visible-border-td">
+                          <div>
+                            <div class="kpi-monthly-t-main-wrapper">
+                              <div class="kpi-num">150</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="visible-border-td">
+                          <div>
+                            <div class="kpi-monthly-ac-wrapper">
+                              <div class="kpi-num">-48,562</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="visible-border-td">
+                          <div>
+                            <div class="kpi-monthly-pc-wrapper">
+                              <div class="kpi-num">107.21%</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <div class="ytd-target">
+                              <div class="kpi-num">74,750</div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="hidden-kpi-tr">
+                        <td class="visible-border-td">
+                          <div>
+                            <div class="horizontal-line"></div>
+                            <div class="vertial-line"></div>
+                            <div
+                              class="kpi-detail-collapase-td-wrapper d-flex flex-row"
+                            >
+                              <div class="kpi-title">
+                                <a href="#">Cost per Lead</a>
+                              </div>
+                              <img
+                                src="assets/images/three_dots.png"
+                                class="three-dot"
+                              />
+                            </div>
+                          </div>
+                        </td>
+                        <td class="visible-border-td">
+                          <div>
+                            <div class="kpi-re-wrapper d-flex flex-row">
+                              <img src="assets/images/user_logo.png" />
+                              <div class="kpi-user-name">P.G.</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="visible-border-td">
+                          <div>
+                            <div class="graph-icon-wrapper">
+                              <img src="assets/images/graph.png" />
+                            </div>
+                          </div>
+                        </td>
+                        <td class="visible-border-td">
+                          <div>
+                            <div
+                              class="kpi-unit-wrapper d-flex justify-content-center"
+                            >
+                              €/#
+                            </div>
+                          </div>
+                        </td>
+                        <td class="visible-border-td">
+                          <div>
+                            <div class="kpi-monthly-t-main-wrapper">
+                              <div class="kpi-num">150</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="visible-border-td">
+                          <div>
+                            <div class="kpi-monthly-ac-wrapper">
+                              <div class="kpi-num">-48,562</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="visible-border-td">
+                          <div>
+                            <div class="kpi-monthly-pc-wrapper">
+                              <div class="kpi-num">107.21%</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <div class="ytd-target">
+                              <div class="kpi-num">74,750</div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
                       <tr class="kpi-tr">
                         <td class="visible-border-td">
                           <div
@@ -1045,17 +1187,24 @@
           document
             .querySelectorAll(".last-collapse-tr")
             .forEach((r) => r.classList.remove("last-collapse-tr"));
-
+          document.querySelectorAll(".first-kpi-tr").forEach((r) =>
+              r.classList.remove("first-kpi-tr")
+          );
           // Add collapse to clicked row
           currentTr.classList.add("collapse-kpi-tr");
 
           // Loop through following rows until next kpi-tr
           let nextRow = currentTr.nextElementSibling;
           let lastHiddenRow = null;
-
+          let foundFirstHidden = false;
           while (nextRow && !nextRow.classList.contains("kpi-tr")) {
             if (nextRow.classList.contains("hidden-kpi-tr")) {
+
               nextRow.classList.add("collapse-kpi-tr");
+              if (!foundFirstHidden) {
+                    nextRow.classList.add("first-kpi-tr");
+                    foundFirstHidden = true;
+                }
               lastHiddenRow = nextRow;
             }
             nextRow = nextRow.nextElementSibling;

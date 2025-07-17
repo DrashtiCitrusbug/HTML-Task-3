@@ -324,6 +324,7 @@ select {
 }
 
 .right-side-container-wrapper .right-side-main-content-wrapper {
+  height: calc(100vh - 3.3rem);
   padding: 2rem;
 }
 
@@ -334,6 +335,7 @@ select {
 }
 .scrollable-wrapper {
   gap: 1.2rem;
+  overflow-y: auto;
 }
 
 .objective-detail-table thead th,
@@ -465,6 +467,7 @@ td.border-td::after {
   font-size: 0.6rem;
   line-height: 0.9rem;
   color: rgba(48, 48, 211, 1);
+
 }
 
 .right-side-container-wrapper
