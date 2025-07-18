@@ -2,46 +2,88 @@
   width: 100%;
 }
 
-.slider {
-  -webkit-appearance: none;
+input[type="range"] {
+	color: #ef233c;
+	--thumb-height: 12px;
+	--track-height: 1px;
+	--track-color: rgba(235, 235, 245, 1);
+	--clip-edges: 0.125em;
+  border-radius: 2px;
+  position: relative;
+	background: #fff0;
+	overflow: hidden;
   width: 100%;
-  height: 0.1rem;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: 0.2s;
-  transition: opacity 0.2s;
-  background: linear-gradient(
-    to right,
-    rgba(212, 33, 69, 1) 0%,
-    rgba(212, 33, 69, 1) 50%,
-    #d3d3d3 50%,
-    #d3d3d3 100%
-  );
-  border-top-left-radius: 0.1rem;
-  border-bottom-left-radius: 0.1rem;
 }
 
-.slider:hover {
-  opacity: 1;
+input[type="range"]:active {
+	cursor: grabbing;
 }
 
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 0.6rem;
-  height: 0.6rem;
-  border-radius: 50%;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: 0px 0.1rem 0.3rem 0px rgba(0, 0, 0, 0.1);
+input[type="range"]:disabled {
+	filter: grayscale(1);
+	opacity: 0.3;
+	cursor: not-allowed;
 }
 
-.slider::-moz-range-thumb {
-  width: 1.25rem;
-  height: 1.25rem;
-  cursor: pointer;
-  box-shadow: 0px 0.1rem 0.3rem 0px rgba(0, 0, 0, 0.1);
+
+input[type="range"],
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	transition: all ease 100ms;
+	height: var(--thumb-height);
+}
+
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-webkit-slider-thumb {
+	position: relative;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	--thumb-radius: calc((var(--thumb-height) * 0.5) - 1px);
+	--clip-top: calc((var(--thumb-height) - var(--track-height)) * 0.5 - 0.5px);
+	--clip-bottom: calc(var(--thumb-height) - var(--clip-top));
+	--clip-further: calc(100% + 1px);
+	--box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0
+		100vmax currentColor;
+
+	width: var(--thumb-width, var(--thumb-height));
+	background: linear-gradient(#FFFFFF 0 0) scroll no-repeat left center /
+		50% calc(var(--track-height) + 1px);
+	background-color: #FFFFFF;
+	box-shadow: var(--box-fill);
+	border-radius: var(--thumb-width, var(--thumb-height));
+
+	filter: brightness(100%);
+	clip-path: polygon(
+		100% -1px,
+		var(--clip-edges) -1px,
+		0 var(--clip-top),
+		-100vmax var(--clip-top),
+		-100vmax var(--clip-bottom),
+		0 var(--clip-bottom),
+		var(--clip-edges) 100%,
+		var(--clip-further) var(--clip-further)
+	);
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+	filter: brightness(var(--brightness-hover));
+	cursor: grab;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+	filter: brightness(var(--brightness-down));
+	cursor: grabbing;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+	background: linear-gradient(var(--track-color) 0 0) scroll no-repeat center /
+		100% calc(var(--track-height) + 1px);
+}
+
+input[type="range"]:disabled::-webkit-slider-thumb {
+	cursor: not-allowed;
 }
 
 .objective-detail-table {
@@ -119,15 +161,24 @@
   padding: 0.15rem 0.3rem;
   border-radius: 0.3rem;
   background-color: #ffffff;
+  min-width: 1.45rem;
+  
 }
 .obj-progress-div-wrapper {
   margin: 0.8rem;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-
+.percent-wrapper{
+  gap: 8px;
+}
 .progress-bar-wrapper {
-  width: 3.7rem;
+  /* width: 68%; */
+  /* width: 68%; */
+  flex: 1;
   display: flex;
   justify-content: center;
+  min-width: 100px;
 }
 .obj-description {
   margin: 0.6rem;
@@ -341,7 +392,15 @@
   border-bottom: 0.1rem solid rgba(48, 48, 211, 1);
   padding-bottom: 0.75rem;
 }
-
+.right-side-container-wrapper
+  .right-side-main-content-wrapper
+  .section-name-wrapper
+  .section-title
+  a.active {
+  color: rgba(48, 48, 211, 1);
+  border-bottom: 0.1rem solid rgba(48, 48, 211, 1);
+  padding-bottom: 0.75rem;
+}
 .right-side-main-content-wrapper .objective-detail-section-wrapper {
   background-color: #ffffff;
   margin-top: 0.6rem;
@@ -435,6 +494,9 @@
  
   .right-side-main-content-wrapper .objective-detail-section-wrapper .objective-detail-header-wrapper{
     gap:0.6rem;
+  }
+  .right-side-container-wrapper .right-side-main-content-wrapper .section-name-wrapper .section-title:hover a{
+    padding-bottom: 0.2rem;
   }
   
 }

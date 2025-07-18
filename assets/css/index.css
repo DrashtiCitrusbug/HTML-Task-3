@@ -5,12 +5,28 @@
   font-family: "DM Sans 18pt";
   font-family: "Inter 18pt";
 }
-
+.btn-click:hover{
+  background-color: #d4d4f7!important;
+  
+}
+.btn-click:hover .setting-name{
+  cursor: pointer;
+color: rgb(31, 31, 241)!important
+}
+.btn-click:hover a{
+color: rgb(24, 24, 241)!important
+}
 html {
   font-size: 20px;
+  overflow-y: hidden;
+  height: 100vh;
 }
 .main-container {
-  height: 100%;
+  height: 100vh;
+}
+body{
+  overflow: hidden;
+  height: 100vh;
 }
 a {
   text-decoration: none;
@@ -92,7 +108,7 @@ select {
   height: 1.4rem;
   background-color: #f7f7fc;
   margin: 0.9rem 0;
-  padding-right: 0.1rem;
+  padding: 0 0.1rem;
   border-top-left-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
 }
@@ -571,9 +587,12 @@ td.border-td::after {
   }
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 991px) {
   .right-side-container-wrapper .right-side-main-content-wrapper {
-    padding: 1.3rem;
+    padding: 1rem;
+  }
+  .objective-detail-table thead th .table-header-name, .prioritized-tasks-table thead th .table-header-name, .kpi-table thead th, .table-header-name{
+    padding: 0 0.4rem;
   }
   .left-side-container-wrapper
     .sidebar-container-wrapper
@@ -606,6 +625,31 @@ td.border-td::after {
     .section-title {
     padding: 0.4rem;
   }
+}
+.right-side-logo-wrapper{
+  margin-top: 10.25rem;
+}
+.right-side-logo-wrapper .image-wrapper{
+  margin: 0 1.75rem;
+  margin-top: 1.2rem;
+}
+.right-side-logo-wrapper .image-wrapper img{
+  width: 100%;
+  height: 100%;
+}
+.right-side-logo-wrapper .r-header-text{
+  margin-top: 0.8rem;
+  font-size: 0.7rem;
+  line-height: 1.1rem;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.right-side-logo-wrapper .r-header-detail{
+font-size: 0.7rem;
+  line-height: 1.1rem;
+  font-weight: 400;
+  text-align: center;
 }
 @media screen and (max-width: 780px) {
   html {
@@ -659,5 +703,43 @@ td.border-td::after {
     height: 100%;
     left: 40px;
     z-index: 1;
+    width: 40%!important;
   }
+  .right-side-logo-wrapper .image-wrapper{
+    margin: 0 1rem;
+  }
+}
+input[type="range"] {
+    color: #007bff; /* Change this to your left side color */
+}
+@media screen and (max-width: 700px) {
+  body{
+    padding-right: 2.5rem;
+  }
+}
+@media screen and (min-width: 781px) and (max-width: 830px){
+  html{
+    font-size: 14px;
+  }
+  .right-side-container-wrapper .right-side-main-content-wrapper{
+    padding-right: 0.8rem;
+  }
+  .objective-detail-section-wrapper, .kpi-section-wrapper,.prioritized-tasks-section-wrapper{
+    padding: 0.4rem 0.8rem 0.8rem 0.8rem!important;
+  }
+
+}
+@media screen and (max-width: 576px) {
+  body{
+    padding-right: 2.5rem;
+  }
+  .objective-detail-section-wrapper, .kpi-section-wrapper,.prioritized-tasks-section-wrapper{
+    padding: 0.4rem 0.8rem 0.8rem 0.8rem!important;
+  }
+  .right-side-container-wrapper .right-side-main-content-wrapper{
+    padding-left: 0.4rem;
+  }
+  /* .scrollable-wrapper{
+    overflow-y: visible;
+  } */
 }

@@ -272,6 +272,7 @@
 
 .kpi-table thead th:nth-child(8) {
   width: 12.01%;
+  vertical-align: top;
 }
 .hidden-kpi-tr {
   display: none;
@@ -360,5 +361,21 @@
   }
   .kpi-header-wrapper .kpi-btn-wrapper {
     margin: auto;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 991px) {
+  .kpi-monthly-ac-wrapper .kpi-num,.kpi-monthly-pc-wrapper .kpi-num,.ytd-target .kpi-num,.kpi-monthly-t-main-wrapper .kpi-num{
+    text-align: center;
+    padding-right: 0;
+    margin-right: 0;
+    padding: 0.15rem 0.4rem;
+  }
+  .kpi-table thead th{
+    vertical-align:middle!important;
+  }
+  .kpi-table thead th.visible-border-td::after{
+    top:0.4rem;
+    
   }
 }

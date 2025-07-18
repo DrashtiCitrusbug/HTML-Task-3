@@ -32,7 +32,7 @@
             <a href="javascript:;" id="nav-collapse-close-icon"></a>
           </div>
         </div>
-        <div class="sidebar-container-wrapper d-flex flex-row">
+        <div class="sidebar-container-wrapper d-flex">
           <div class="left-side-image-container-wrapper">
             <div class="image-wrapper">
               <img src="assets/images/UserSwitch.png" />
@@ -80,7 +80,17 @@
               <div class="sidebar-name">Manfred Muller COO</div>
               <img src="assets/images/nav_arrow_down.png" />
             </div>
+            <div class="right-side-logo-wrapper">
+              <div class="image-wrapper">
+                <img src="assets/images/sidebar-logo.png" />
+              </div>
+              <div class="r-header-text">Apply Radical Focus</div>
+              <div class="r-header-detail">
+                Track objectives, define priorities and update KPIs & initiatives
+              </div>
+            </div>
           </div>
+          
         </div>
       </div>
       <div class="right-side-container-wrapper d-flex w-100 flex-column">
@@ -106,7 +116,7 @@
         <div class="right-side-main-content-wrapper d-flex w-100 flex-column">
           <div class="header-wrapper d-flex flex-row justify-content-between">
             <div class="header-name">My Radical Focus</div>
-            <div class="setting-wrapper d-flex flex-row">
+            <div class="setting-wrapper d-flex flex-row border-0 btn-click">
               <img src="assets/images/setting_icon.png" class="setting-icon" />
               <div class="setting-name">Radical Focus Settings</div>
             </div>
@@ -163,7 +173,7 @@
                     <div class="objective-detail-section-value">Individual</div>
                   </div>
                   <div
-                    class="d-flex flex-row btn-wrapper align-items-center justify-content-center"
+                    class="d-flex flex-row btn-wrapper align-items-center justify-content-center btn-click"
                   >
                     <img src="assets/images/plus.png" class="plus-icon" />
                     <div class="btn-text"><a>Add Objective</a></div>
@@ -252,8 +262,10 @@
                                 id="myRange"
                               />
                             </div>
-                            <div class="progress-num">25</div>
-                            <div class="progress-percent">%</div>
+                            <div class="d-flex flex-row percent-wrapper justify-content-between">
+                              <div class="progress-num">25</div>
+                              <div class="progress-percent">%</div>
+                            </div>
                           </div>
                         </td>
                       </tr>
@@ -297,7 +309,7 @@
                                 class="arrow-down"
                               />
                             </div>
-                            <div class="btn-wrapper d-flex flex-row">
+                            <div class="btn-wrapper d-flex flex-row btn-click">
                               <img
                                 class="plus-icon"
                                 src="assets/images/plus.png"
@@ -355,7 +367,7 @@
                           <div
                             class="d-flex flex-row obj-progress-div-wrapper align-items-center obj-div-wrapper justify-content-between"
                           >
-                            <div class="progress-bar-wrapper">
+                            <div class="progress-bar-wrapper d-flex">
                               <input
                                 type="range"
                                 min="1"
@@ -365,8 +377,10 @@
                                 id="myRange"
                               />
                             </div>
-                            <div class="progress-num">25</div>
-                            <div class="progress-percent">%</div>
+                            <div class="d-flex flex-row percent-wrapper justify-content-between">
+                              <div class="progress-num">25</div>
+                              <div class="progress-percent">%</div>
+                            </div>
                           </div>
                         </td>
                       </tr>
@@ -409,7 +423,7 @@
                     <div class="sc-text">Show Completed</div>
                   </div>
                   <div
-                    class="d-flex flex-row btn-wrapper align-items-center justify-content-center"
+                    class="d-flex flex-row btn-wrapper align-items-center justify-content-center border-0 btn-click"
                   >
                     <img src="assets/images/plus.png" class="plus-icon" />
                     <div class="btn-text"><a>Add Task</a></div>
@@ -601,7 +615,7 @@
                     </div>
                   </div>
                   <div class="kpi-btn-wrapper">
-                  <div class="d-flex flex-row btn-wrapper align-items-center">
+                  <div class="d-flex flex-row btn-wrapper align-items-center btn-click">
                     <img src="assets/images/plus.png" class="plus-icon" />
                     <div class="btn-text">
                       <a href="javascript:;">Add KPI</a>
@@ -1147,6 +1161,15 @@
       </div>
     </div>
     <script>
+      const links = document.querySelectorAll('.section-title a');
+
+links.forEach(link => {
+    link.addEventListener('click', function () {
+        links.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
       document.querySelectorAll(".kpi-table-row-icon").forEach((icon) => {
         icon.addEventListener("click", function (event) {
           // Prevent double-trigger from tr dblclick if needed
