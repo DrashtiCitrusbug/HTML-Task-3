@@ -224,3 +224,11 @@ input[type="checkbox"]:hover {
     justify-content:space-between;
   }
 }
+@media screen and (max-width: 576px) {
+  .objective-detail-table thead th, .prioritized-tasks-table thead th, .kpi-table thead th{
+    vertical-align: middle;
+  }
+  .prioritized-tasks-table th.visible-border-td::after{
+    top:1.5rem;
+  }
+}

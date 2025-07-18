@@ -485,15 +485,19 @@ td.border-td::after {
   color: rgba(48, 48, 211, 1);
 
 }
-
+/* .min-height-name{
+  min-width: 132px;
+} */
 .right-side-container-wrapper
   .right-side-main-content-wrapper
   .section-name-wrapper {
-  width: 100%;
-  border-bottom: 1px solid #ebebf5;
-  padding-top: 0.4rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.6rem;
+    width: 100%;
+    border-bottom: 1px solid #ebebf5;
+    padding-top: 0.4rem;
+    flex-wrap: nowrap;
+    margin-bottom: 0.6rem;
+    overflow-x: auto;
+    min-height: fit-content;
 }
 
 .right-side-container-wrapper
@@ -501,6 +505,8 @@ td.border-td::after {
   .section-name-wrapper
   .section-title {
   padding: 0.6rem;
+  width: fit-content;
+  min-width: max-content;
 }
 
 .right-side-container-wrapper
@@ -591,6 +597,12 @@ td.border-td::after {
   .right-side-container-wrapper .right-side-main-content-wrapper {
     padding: 1rem;
   }
+  .right-side-container-wrapper .right-side-main-content-wrapper .section-name-wrapper .section-title:hover a{
+    padding-bottom: 0.55rem!important;
+  }
+  .right-side-container-wrapper .right-side-main-content-wrapper .section-name-wrapper .section-title a.active{
+    padding-bottom: 0.55rem!important;
+  }
   .objective-detail-table thead th .table-header-name, .prioritized-tasks-table thead th .table-header-name, .kpi-table thead th, .table-header-name{
     padding: 0 0.4rem;
   }
@@ -651,6 +663,7 @@ font-size: 0.7rem;
   font-weight: 400;
   text-align: center;
 }
+
 @media screen and (max-width: 780px) {
   html {
     font-size: 15px;
@@ -709,8 +722,10 @@ font-size: 0.7rem;
     margin: 0 1rem;
   }
 }
-input[type="range"] {
-    color: #007bff; /* Change this to your left side color */
+@media screen and (min-width: 500px) and (max-width: 780px) {
+  .left-side-container-wrapper .sidebar-container-wrapper.collapse-div .right-side-nav-name-container-wrapper{
+    width: 30%!important;
+  }
 }
 @media screen and (max-width: 700px) {
   body{
